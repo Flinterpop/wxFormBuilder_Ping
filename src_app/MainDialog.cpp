@@ -223,7 +223,7 @@ void MainDialog::BuildScanList(void)
 
 
 	int i = 0;
-	for (auto a : ScanList)  SetRow(a, i++);
+	for (auto &a : ScanList)  SetRow(a, i++);
 
 	bSizer1->Fit(this); // Size the dialog to fit its content
 	pme("Created Scan List");
