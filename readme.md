@@ -1,86 +1,22 @@
-Download, build and statically link wxWidgets as the GUI library for your C++ project!
+# RCS_Pinger
+App that periodically pings network nodes from predefined lists
 
-[![Video](/output.gif)](https://www.youtube.com/watch?v=zjNg5HdgNO0)
+Uses wxWidgets, wxFormBuilder and CMake.
 
-Full Tutorial: https://www.youtube.com/watch?v=zjNg5HdgNO0
+To build
+1. Clone the repo
+3. make a build folder in the root
+4. from the build folder run ```cmake ..```
 
-```cmake
-cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
+There are several predefined Sites in the source code.
+Each site is a list of IPs and a Name.
+Modify as required.
 
-project(wx_cmake_fetchcontent_template LANGUAGES CXX)
+Features to add:
+1. Read sites from a text file
+2. Run a network discovery based on a subnet input (like 192.168.1.0/24)
 
-include(FetchContent)
+   
+<img width="1463" height="989" alt="image" src="https://github.com/user-attachments/assets/2bf5298e-093a-4b40-a94d-bd376ec76593" />
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(wxBUILD_SHARED OFF)
-
-message(STATUS "Fetching wxWidgets...")
-
-FetchContent_Declare(
-   wxWidgets
-   GIT_REPOSITORY https://github.com/wxWidgets/wxWidgets.git
-   GIT_SHALLOW ON
-)
-FetchContent_MakeAvailable(wxWidgets)
-
-set(SRCS main.cpp)
-
-add_executable(main WIN32 ${SRCS})
-target_link_libraries(main PRIVATE wxcore wxnet)
-```
-
-### System Requirements
-
-To get started with this project, ensure you have the following tools and libraries:
-
-- **CMake (Version 3.14 or later):** Essential for building and managing the project files.
-- **C++ Compiler:** Compatible with Clang, GCC, or MSVC. Choose one based on your development environment.
-- **GTK3 Development Libraries (for Linux users):** Necessary for GUI development on Linux platforms.
-
-### Building the Project
-
-#### Debug
-
-Follow these steps to build the project:
-
-1. **Create a build directory & configure the build:**
-   ```bash
-   cmake -S. -Bbuild
-   ```
-
-2. **Build the project:**
-   ```bash
-   cmake --build build -j
-   ```
-
-This will create a `build` directory and compile all necessary artifacts there. The main executable will be located in `build/`.
-
-#### Release
-
-For release build use `--config Release` on Windows:
-
-```bash
-cmake -S. -Bbuild
-cmake --build build -j --config Release
-```
-
-Artifacts for both configurations will be generated in the `build` directory.
-
-On Mac or Linux you'll need to maintain two build trees:
-
-```bash
-cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Debug
-cmake --build build -j
-cmake -S. -Bbuild-rel -DCMAKE_BUILD_TYPE=Release
-cmake --build build-rel -j
-```
-
-### License
-
-MIT License. Can be used in closed-source commercial products.
-
----
-Check out the blog for more! [www.onlyfastcode.com](https://www.onlyfastcode.com)
----
