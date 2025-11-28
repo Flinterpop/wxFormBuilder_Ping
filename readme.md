@@ -17,6 +17,7 @@ Features to add:
 2. Run a network discovery based on a subnet input (like 192.168.1.0/24)
 
    
-<img width="1463" height="989" alt="image" src="https://github.com/user-attachments/assets/2bf5298e-093a-4b40-a94d-bd376ec76593" />
+<img width="1510" height="1096" alt="image" src="https://github.com/user-attachments/assets/9a36d31f-87c6-4697-a2d0-421ccd94f7fb" />
+
 
 
