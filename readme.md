@@ -12,6 +12,9 @@ There are several predefined Sites in the source code.
 Each site is a list of IPs and a Name.
 Modify as required.
 
+### UI Builder
+There is a file called `RCS_PingBuilder.fbp` that is used by wxFormBuilder to generate code for the UI.
+
 Features to add:
 1. Read sites from a text file
 2. Run a network discovery based on a subnet input (like 192.168.1.0/24)
